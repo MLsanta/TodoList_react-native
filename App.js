@@ -21,7 +21,7 @@ export default function App() {
         const { status } = await ImagePicker.requestCameraPermissionsAsync();
 
         if (status !== "granted") {
-            alert("카메라 권한이 필요합니다");
+            alert("카메라 권한이 필요합니다.");
             return;
         }
 
@@ -118,12 +118,9 @@ export default function App() {
                         </Pressable>
                     )}
                 />
-                {/* 카메라 버튼 */}
                 <Pressable onPress={getPhoto} style={styles.cameraBtn}>
                     <Text style={styles.cameraText}>카메라 촬영</Text>
                 </Pressable>
-
-                {/* 촬영한 사진 */}
                 {photo && (
                     <Image source={{ uri: photo }} style={styles.photo} />
                 )}
